@@ -34,6 +34,8 @@ pub enum Error {
     MerkleTreeGenerationError(String),
     #[fail(display = "Cannot (yet) generate inclusion proof for unaligned piece.")]
     UnalignedPiece,
+    #[fail(display = "Cannot create trees directory.")]
+    CannotCreateDir,
 }
 
 impl From<SynthesisError> for Error {

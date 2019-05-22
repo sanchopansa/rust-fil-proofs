@@ -470,7 +470,7 @@ pub trait Layers {
                                     // Try to create `tree_dir`, ignore the error if `AlreadyExists`.
                                     if let Some(create_error) = fs::create_dir(&tree_dir).err() {
                                         if create_error.kind() != io::ErrorKind::AlreadyExists {
-                                            panic!(create_error);
+                                            return Error::CannotCreateDir;
                                         }
                                     }
 
