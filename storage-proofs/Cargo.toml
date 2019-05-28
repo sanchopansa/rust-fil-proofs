@@ -42,7 +42,7 @@ paired = "0.15"
 fil-sapling-crypto = "0.1"
 
 [features]
-default = []
+default = ["disk-trees"]
 simd = []
 asm = ["sha2/sha2-asm"]
 disk-trees = []

@@ -39,7 +39,7 @@ opt-level = 1
 debug = true
 
 [features]
-default = []
+default = ["disk-trees"]
 cpu-profile = ["filecoin-proofs/cpu-profile"]
 heap-profile = ["filecoin-proofs/heap-profile"]
 simd = ["storage-proofs/simd", "filecoin-proofs/simd"]
