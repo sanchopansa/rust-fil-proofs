@@ -13,7 +13,8 @@ logging-toolkit = { version = "^0.2", path = "../logging-toolkit" }
 bitvec = "0.11"
 rand = "0.4"
 libc = "0.2"
-merkletree = "0.6"
+# merkletree = "0.6"
+merkletree = {git = "https://github.com/filecoin-project/merkle_light", branch = "fix/build/dont-allocate-temps"}
 failure = "0.1"
 byteorder = "1"
 config = "0.9.3"
