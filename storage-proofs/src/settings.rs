@@ -42,11 +42,9 @@ impl Settings {
 
         let settings: Result<Settings, ConfigError> = s.try_into();
 
-        #[cfg(feature = "disk-trees")]
+        #[cfg(not(feature = "disk-trees"))]
         {
-            if settings.is_ok()
-                && settings.as_ref().unwrap().generate_merkle_trees_in_parallel == false
-            {
+            if settings.is_ok() && !settings.as_ref().unwrap().generate_merkle_trees_in_parallel {
                 return Err(ConfigError::Message("Setting GENERATE_MERKLE_TREES_IN_PARALLEL to false (sequiental generation) \ndoesn't add any value if the `disk-trees` feature is not set (no offload possible)".to_string()));
             }
         }
